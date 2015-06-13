@@ -22,16 +22,36 @@
     "oauth2-server": "^2.4.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.7.10",
+    "del": "^1.2.0",
     "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-bump": "^0.3.1",
+    "gulp-changed": "^1.2.1",
+    "gulp-jshint": "^1.11.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
-    "jspm": "^0.15.7"
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "jspm": "^0.15.7",
+    "object.assign": "^3.0.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.0",
+    "vinyl-paths": "^1.0.0",
+    "yargs": "^3.10.0"
   },
   "jspm": {
     "directories": {
-      "baseURL": "public"
+      "baseURL": "jspm"
     },
-    "dependencies": {},
+    "dependencies": {
+      "jquery": "github:components/jquery@^2.1.4",
+      "modernizr": "github:Modernizr/Modernizr@^2.8.3"
+    },
     "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4",
       "traceur": "github:jmcriffey/bower-traceur@0.0.88",
       "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
     }

@@ -9,6 +9,7 @@
 	<meta name="apple-mobile-web-app-title" content="X1 Skynet" />
 	<title>X1 Skynet</title>
 	<base href="/" />
+  <link rel="stylesheet" href="default.css" type="text/css">
 </head>
 <body >
 	<noscript>
@@ -18,6 +19,18 @@
 			<a href="http://enable-javascript.com" target="_blank">Learn more</a></p>
 		</div>
 	</noscript>
-  <h1>Hello ....</h1>
+  <div class="page">
+    <section class="navigation">
+    </section>
+    <section class="mainContent center">
+      <h1>Hello Human....</h1>
+    </section>
+  </div>
+  <script src="jspm_packages/system.js"></script>
+  <script src="config.js"></script>
+  <script>
+    System.import('modernizr');
+    System.import('app/main');
+  </script>
 </body>
 </html>

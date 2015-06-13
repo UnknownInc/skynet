@@ -113,8 +113,8 @@ selectNodeVersion
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
   eval $NPM_CMD install
-  eval ./node_modules/.bin/gulp
   eval ./node_modules/.bin/jspm install
+  eval ./node_modules/.bin/gulp build
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi

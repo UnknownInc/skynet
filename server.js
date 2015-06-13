@@ -6,7 +6,8 @@ var app = express();
 
 app.set("x-powered-by",false);
 
-app.use(express.static('public',{}));
+app.use(express.static('dist',{}));
+app.use(express.static('jspm',{}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
  
