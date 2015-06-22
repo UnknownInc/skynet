@@ -7,6 +7,7 @@ module.exports = {
   source: appRoot + '**/*.js',
   html: appRoot + '**/*.html',
   style: appRoot + '**/*.scss',
+  images: appRoot + 'images/**/*',
   output: 'dist/',
   doc:'./doc',
   e2eSpecsSrc: 'test/e2e/src/*.js',

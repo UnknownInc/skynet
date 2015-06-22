@@ -32,6 +32,13 @@ gulp.task('build-html', function () {
     .pipe(gulp.dest(paths.output));
 });
 
+// copies changed images files to the output directory
+gulp.task('build-images', function () {
+  return gulp.src(paths.images)
+    .pipe(changed(paths.output))
+    .pipe(gulp.dest(paths.output+'images/'));
+});
+
 // Next, we add a new task for building css.
 gulp.task('build-css', function() {
   
@@ -72,7 +79,7 @@ gulp.task('build', function(callback) {
     // Finally, we append our new build-css task to the general build task.
     // This will link build-css into the general build task which is used
     // in the gulp watch task.
-    ['build-system', 'build-html', 'build-css'],
+    ['build-system', 'build-html', 'build-css', 'build-images'],
     callback
   );
 });

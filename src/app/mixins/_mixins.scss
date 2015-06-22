@@ -1,0 +1,144 @@
+//from:http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
+    @if $IE9 == true{
+        .lt-ie9 & {
+            @content;
+        }
+    }
+
+    @media (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
+        @content;
+    }
+}
+
+//from:http://hackingui.com/front-end/10-best-scss-utilities/
+// Breakpoints for each query
+$phone: 480px !default;
+$tabletP: 767px !default;
+$tabletL: 1024px !default;
+$desktop: 1174px !default;
+$largeScreen: 1400px !default;
+
+@mixin respondTo($media) {
+  @if $media == phone {
+    @media (max-width: $phone) { @content; }
+  }
+  @else if $media == tablet {
+    @media (min-width: $tabletP) and (max-width: $tabletL) { @content; }
+  }
+  @else if $media == smallScreen {
+    @media (max-width: $desktop) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $desktop) { @content; }
+  }
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@function toRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: toRem($size);
+}
+
+@mixin ghostVerticalAlign(){
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; width: .1px;
+  }
+}
+
+@mixin truncateText($overflow: ellipsis){
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: $overflow; // values are: clip, ellipsis, or a string
+}
+
+/*
+* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+* $direction: up, down, left, right
+*/
+@mixin triangle($direction, $size: 6px, $color: #222){
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0; width: 0;
+  @if ($direction == 'up'){
+    border-bottom: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  }
+  @else if ($direction == 'down'){
+    border-top: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  }
+  @else if ($direction == 'left'){
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-right: $size solid $color;
+  }
+  @else if ($direction == 'right'){
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-left: $size solid $color;
+  }
+}
+
+/* Variables */
+$maxContentWidth: 90rem !default;
+$gutter: 1rem !default;
+
+/* Grid */
+@mixin row($inside: false) {
+  @if($inside == true) {
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+  }
+  @else {
+    width: 100%;
+    max-width: $maxContentWidth;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin col($width: 1, $padding: true) {
+  float: left;
+  width: percentage($width);
+  @if($padding == true) {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+  }
+}
+@mixin push($width: 0) {
+  position: relative;
+  left: percentage($width);
+}
+@mixin pull($width: 0) {
+  position: relative;
+  right: percentage($width);
+}
+

@@ -18,7 +18,9 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.5.8",
     "core-js": "npm:core-js@0.9.17",
     "css": "github:systemjs/plugin-css@0.1.12",
+    "font-awesome": "npm:font-awesome@4.3.0",
     "jquery": "github:components/jquery@2.1.4",
+    "jquerypp": "npm:jquerypp@2.0.0",
     "modernizr": "github:Modernizr/Modernizr@2.8.3",
     "normalize.css": "github:necolas/normalize.css@3.0.3",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -111,11 +113,21 @@ System.config({
     "npm:core-util-is@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
+    "npm:font-awesome@4.3.0": {
+      "css": "github:systemjs/plugin-css@0.1.12"
+    },
     "npm:https-browserify@0.0.0": {
       "http": "github:jspm/nodelibs-http@1.7.1"
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:jquery@2.1.4": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:jquerypp@2.0.0": {
+      "jquery": "npm:jquery@2.1.4",
+      "path": "github:jspm/nodelibs-path@0.1.0"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"

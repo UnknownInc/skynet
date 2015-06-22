@@ -46,7 +46,9 @@
     },
     "dependencies": {
       "css": "github:systemjs/plugin-css@^0.1.9",
+      "font-awesome": "npm:font-awesome@^4.3.0",
       "jquery": "github:components/jquery@^2.1.4",
+      "jquerypp": "npm:jquerypp@^2.0.0",
       "modernizr": "github:Modernizr/Modernizr@^2.8.3",
       "normalize.css": "github:necolas/normalize.css@^3.0.3"
     },
